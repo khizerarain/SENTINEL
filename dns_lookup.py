@@ -1,3 +1,5 @@
+"""DNS lookup support for A, AAAA, MX, TXT, and NS record resolution."""
+
 import dns.resolver
 
 from rich.console import Console

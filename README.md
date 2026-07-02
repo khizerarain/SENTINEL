@@ -14,6 +14,8 @@ The port scanner checks common TCP services and highlights open ports while remi
 
 The SSL checker verifies certificate validity, issuer details, and expiry warnings for soon-to-expire certificates.
 
+The DNS lookup module resolves A, AAAA, MX, TXT, and NS records and displays them in a Rich table for quick inspection.
+
 This tool is intended for authorized security testing only and includes a prominent ethical use disclaimer in both the README and startup UI.
 
 ## Tech Stack
