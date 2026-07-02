@@ -12,6 +12,8 @@ SENTINEL is a Python-based cybersecurity intelligence CLI for ethical security a
 
 The port scanner checks common TCP services and highlights open ports while reminding users to only scan authorized systems.
 
+The SSL checker verifies certificate validity, issuer details, and expiry warnings for soon-to-expire certificates.
+
 This tool is intended for authorized security testing only and includes a prominent ethical use disclaimer in both the README and startup UI.
 
 ## Tech Stack
