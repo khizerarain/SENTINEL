@@ -98,7 +98,7 @@ def ports(domain: str) -> None:
 
 
 @app.command()
-def ip(target: str | None = None) -> None:
+def ip(target: str | None = typer.Argument(None, help="IP address to look up.")) -> None:
     run_ip(target)
 
 
