@@ -40,6 +40,16 @@ This tool is intended for authorized security testing only and includes a promin
 pip install -r requirements.txt
 ```
 
+## Testing
+
+Run the included CLI validation suite with:
+
+```bash
+python -m unittest discover tests
+```
+
+```
+
 ## Usage
 
 ```bash
