@@ -1,0 +1,7 @@
+typer[all]
+rich
+requests
+dnspython
+python-whois
+reportlab
+ipinfo

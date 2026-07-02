@@ -1,0 +1,16 @@
+.env
+.env.local
+*.env
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+*.log
+sentinel_report_*.pdf
+sentinel_report_*.md
