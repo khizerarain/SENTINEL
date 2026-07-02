@@ -1,3 +1,5 @@
+"""Generate Markdown and PDF security reports using ReportLab."""
+
 from datetime import datetime
 
 from reportlab.lib import colors

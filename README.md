@@ -65,6 +65,10 @@ python main.py hash --algo sha256 "important text"
 python main.py report example.com
 ```
 
+## Report Generation
+
+SENTINEL can create both Markdown and PDF security reports for audited domains. The PDF report uses ReportLab for a clean layout with headings, technical details, and a security score summary.
+
 ## Ethical Use Disclaimer
 
 > ⚠️ SENTINEL is intended for use on systems you own or have explicit written permission to test. Unauthorized scanning may be illegal in your jurisdiction. Use responsibly.
