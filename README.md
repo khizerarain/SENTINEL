@@ -10,6 +10,8 @@ Analyze. Detect. Secure.
 
 SENTINEL is a Python-based cybersecurity intelligence CLI for ethical security assessment, designed for developers, DevOps engineers, security students, and sysadmins. It helps inspect domains and websites with network, SSL, DNS, WHOIS, header, port, and report capabilities.
 
+This tool is intended for authorized security testing only and includes a prominent ethical use disclaimer in both the README and startup UI.
+
 ## Tech Stack
 
 - Python 3.10+

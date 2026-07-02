@@ -25,7 +25,6 @@ def main(ctx: typer.Context) -> None:
     panel_text = (
         f"[bold cyan]{APP_NAME}[/bold cyan] — Analyze. Detect. Secure.\n"
         f"Version: [green]{VERSION}[/green]\n\n"
-        f"{ETHICAL_MESSAGE}\n\n"
         "1. scan <domain>\n"
         "2. ssl <domain>\n"
         "3. dns <domain>\n"
@@ -38,6 +37,7 @@ def main(ctx: typer.Context) -> None:
         "10. report <domain>"
     )
 
+    console.print(Panel(ETHICAL_MESSAGE, title="[bold yellow]Disclaimer[/]", border_style="yellow"))
     console.print(Panel(panel_text, title=f"[bold cyan]{APP_NAME}[/]", border_style="bold cyan"))
     if ctx.invoked_subcommand is None:
         return
