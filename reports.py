@@ -1,5 +1,6 @@
 """Generate Markdown and PDF security reports using ReportLab."""
 
+import sys
 from datetime import datetime
 
 from reportlab.lib import colors
@@ -18,7 +19,13 @@ from scanner import run_scan
 from ssl_checker import get_ssl_details
 from utils import compute_security_score, make_request
 
-console = Console()
+console = Console(
+    file=sys.stdout,
+    force_terminal=sys.stdout.isatty(),
+    no_color=not sys.stdout.isatty(),
+    color_system=None,
+    legacy_windows=False,
+)
 
 
 def _build_markdown(domain: str, score: int, ssl_data: dict, header_data: dict, dns_text: str, open_ports: list[int], recommendations: list[str]) -> str:

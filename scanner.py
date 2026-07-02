@@ -1,3 +1,4 @@
+import sys
 import time
 
 from rich.console import Console
@@ -11,7 +12,13 @@ from ports import scan_ports
 from ssl_checker import get_ssl_details
 from utils import compute_security_score, make_request
 
-console = Console()
+console = Console(
+    file=sys.stdout,
+    force_terminal=sys.stdout.isatty(),
+    no_color=not sys.stdout.isatty(),
+    color_system=None,
+    legacy_windows=False,
+)
 
 
 def run_scan(domain: str) -> None:

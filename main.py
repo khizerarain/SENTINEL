@@ -1,3 +1,4 @@
+import sys
 import typer
 from rich.console import Console
 from rich.panel import Panel
@@ -16,7 +17,13 @@ from ssl_checker import run_ssl
 from whois_lookup import run_whois
 from utils import is_valid_domain, normalize_domain, print_error
 
-console = Console()
+console = Console(
+    file=sys.stdout,
+    force_terminal=sys.stdout.isatty(),
+    no_color=not sys.stdout.isatty(),
+    color_system=None,
+    legacy_windows=False,
+)
 app = typer.Typer(name="sentinel")
 
 

@@ -1,3 +1,4 @@
+import sys
 import socket
 import ssl
 from datetime import datetime
@@ -5,7 +6,13 @@ from datetime import datetime
 from rich.console import Console
 from rich.panel import Panel
 
-console = Console()
+console = Console(
+    file=sys.stdout,
+    force_terminal=sys.stdout.isatty(),
+    no_color=not sys.stdout.isatty(),
+    color_system=None,
+    legacy_windows=False,
+)
 
 
 def _parse_name(name_tuple):

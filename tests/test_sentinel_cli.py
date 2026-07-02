@@ -10,7 +10,17 @@ MAIN = os.path.join(PROJECT_ROOT, "main.py")
 
 
 def run_command(args, cwd=PROJECT_ROOT):
-    result = subprocess.run([PYTHON, MAIN] + args, cwd=cwd, capture_output=True, text=True)
+    env = os.environ.copy()
+    env["PYTHONUTF8"] = "1"
+    result = subprocess.run(
+        [PYTHON, MAIN] + args,
+        cwd=cwd,
+        env=env,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+    )
     return result
 
 

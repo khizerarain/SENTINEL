@@ -1,3 +1,4 @@
+import sys
 import socket
 
 from rich.console import Console
@@ -6,7 +7,13 @@ from rich.table import Table
 
 import config
 
-console = Console()
+console = Console(
+    file=sys.stdout,
+    force_terminal=sys.stdout.isatty(),
+    no_color=not sys.stdout.isatty(),
+    color_system=None,
+    legacy_windows=False,
+)
 
 
 def scan_ports(domain: str, silent: bool = False) -> dict:

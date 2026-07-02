@@ -1,10 +1,17 @@
+import sys
 from datetime import datetime
 
 import whois
 from rich.console import Console
 from rich.panel import Panel
 
-console = Console()
+console = Console(
+    file=sys.stdout,
+    force_terminal=sys.stdout.isatty(),
+    no_color=not sys.stdout.isatty(),
+    color_system=None,
+    legacy_windows=False,
+)
 
 
 def _format_value(value):

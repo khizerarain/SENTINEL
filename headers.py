@@ -1,3 +1,4 @@
+import sys
 from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
@@ -5,7 +6,13 @@ from rich.table import Table
 import config
 from utils import make_request
 
-console = Console()
+console = Console(
+    file=sys.stdout,
+    force_terminal=sys.stdout.isatty(),
+    no_color=not sys.stdout.isatty(),
+    color_system=None,
+    legacy_windows=False,
+)
 
 
 def get_security_header_results(domain: str) -> dict:

@@ -1,12 +1,19 @@
 """DNS lookup support for A, AAAA, MX, TXT, and NS record resolution."""
 
+import sys
 import dns.resolver
 
 from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-console = Console()
+console = Console(
+    file=sys.stdout,
+    force_terminal=sys.stdout.isatty(),
+    no_color=not sys.stdout.isatty(),
+    color_system=None,
+    legacy_windows=False,
+)
 
 
 def _fetch_records(domain: str, record_type: str) -> list[str]:

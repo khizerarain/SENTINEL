@@ -1,11 +1,18 @@
 """Compute SHA-256, SHA-512, or MD5 digests for provided text."""
 
+import sys
 import hashlib
 
 from rich.console import Console
 from rich.panel import Panel
 
-console = Console()
+console = Console(
+    file=sys.stdout,
+    force_terminal=sys.stdout.isatty(),
+    no_color=not sys.stdout.isatty(),
+    color_system=None,
+    legacy_windows=False,
+)
 
 
 def run_hash(text: str, algo: str) -> None:
