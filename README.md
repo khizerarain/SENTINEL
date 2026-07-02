@@ -16,6 +16,8 @@ The SSL checker verifies certificate validity, issuer details, and expiry warnin
 
 The DNS lookup module resolves A, AAAA, MX, TXT, and NS records and displays them in a Rich table for quick inspection.
 
+The password generator uses the secure `secrets` module and can produce high-entropy credentials with optional symbol exclusion.
+
 This tool is intended for authorized security testing only and includes a prominent ethical use disclaimer in both the README and startup UI.
 
 ## Tech Stack

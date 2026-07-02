@@ -1,3 +1,5 @@
+"""Generate cryptographically secure passwords using Python's secrets module."""
+
 import secrets
 import string
 
