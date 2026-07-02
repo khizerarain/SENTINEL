@@ -18,6 +18,8 @@ The DNS lookup module resolves A, AAAA, MX, TXT, and NS records and displays the
 
 The password generator uses the secure `secrets` module and can produce high-entropy credentials with optional symbol exclusion.
 
+The hashing command supports SHA-256, SHA-512, and MD5, with a warning flag for MD5 usage.
+
 This tool is intended for authorized security testing only and includes a prominent ethical use disclaimer in both the README and startup UI.
 
 ## Tech Stack

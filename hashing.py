@@ -1,3 +1,5 @@
+"""Compute SHA-256, SHA-512, or MD5 digests for provided text."""
+
 import hashlib
 
 from rich.console import Console
