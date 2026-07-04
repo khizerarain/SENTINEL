@@ -40,14 +40,34 @@ This tool is intended for authorized security testing only and includes a promin
 pip install -r requirements.txt
 ```
 
+## Quick Start
+
+1. Activate the virtual environment
+   - **PowerShell:**
+     ```powershell
+     .\.venv\Scripts\Activate.ps1
+     ```
+   - **Command Prompt:**
+     ```cmd
+     .\.venv\Scripts\activate.bat
+     ```
+
+2. Show the main menu
+   ```bash
+   python main.py
+   ```
+
+3. Run a command
+   ```bash
+   python main.py scan example.com
+   ```
+
 ## Testing
 
 Run the included CLI validation suite with:
 
 ```bash
 python -m unittest discover tests
-```
-
 ```
 
 ## Usage
