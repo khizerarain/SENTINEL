@@ -28,7 +28,7 @@ Warning: **Ethical Use Only** - Only scan systems you own or have explicit writt
 ## Installation
 
 ```bash
-pip install sentinel-cli
+pip install sentinel-recon
 ```
 
 ---
