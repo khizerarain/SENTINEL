@@ -23,7 +23,7 @@ def run_ip(target: str | None = None) -> None:
             ip = ipaddress.ip_address(target)
             if ip.is_private:
                 console.print(Panel(
-                    "[bold yellow]Private/Local IP — no geolocation available.[/]",
+                    "[bold yellow]Private/Local IP - no geolocation available.[/]",
                     border_style="yellow",
                     title="IP Lookup"
                 ))

@@ -12,12 +12,12 @@ from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 from rich.console import Console
 from rich.panel import Panel
 
-from dns_lookup import run_dns
-from headers import get_security_header_results
-from ports import scan_ports
-from scanner import run_scan
-from ssl_checker import get_ssl_details
-from utils import compute_security_score, make_request
+from sentinel.dns_lookup import run_dns
+from sentinel.headers import get_security_header_results
+from sentinel.ports import scan_ports
+from sentinel.scanner import run_scan
+from sentinel.ssl_checker import get_ssl_details
+from sentinel.utils import compute_security_score, make_request
 
 console = Console(
     file=sys.stdout,
@@ -103,7 +103,7 @@ def _create_pdf(filename: str, domain: str, score: int, ssl_data: dict, header_d
     story.append(Spacer(1, 12))
     story.append(Paragraph("Recommendations", styles["Heading3"]))
     for recommendation in recommendations:
-        story.append(Paragraph(f"• {recommendation}", normal_style))
+        story.append(Paragraph(f"- {recommendation}", normal_style))
     doc.build(story)
 
 

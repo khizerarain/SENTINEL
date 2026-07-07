@@ -1,118 +1,68 @@
 # SENTINEL
 
-**SENTINEL — Cybersecurity Intelligence CLI**
+> Analyze. Detect. Secure.
 
-Analyze. Detect. Secure.
+SENTINEL is a cybersecurity intelligence CLI tool for ethical security assessment of domains and websites. Built for developers, DevOps engineers, security students, and sysadmins.
 
-⚠️ SENTINEL is intended for use on systems you own or have explicit written permission to test. Unauthorized scanning may be illegal in your jurisdiction. Use responsibly.
+---
 
-## Overview
+Warning: **Ethical Use Only** - Only scan systems you own or have explicit written permission to test. Unauthorized scanning may be illegal in your jurisdiction.
 
-SENTINEL is a Python-based cybersecurity intelligence CLI for ethical security assessment, designed for developers, DevOps engineers, security students, and sysadmins. It helps inspect domains and websites with network, SSL, DNS, WHOIS, header, port, and report capabilities.
+---
 
-The port scanner checks common TCP services and highlights open ports while reminding users to only scan authorized systems.
+## Features
 
-The SSL checker verifies certificate validity, issuer details, and expiry warnings for soon-to-expire certificates.
+- Website scanner with security scoring
+- SSL certificate checker with expiry warnings
+- DNS lookup (A, MX, TXT, NS, AAAA)
+- WHOIS domain information
+- Security headers analysis
+- Port scanner (common ports)
+- IP geolocation intelligence
+- Cryptographic password generator
+- Hash generator (SHA-256, SHA-512, MD5)
+- Security report generator (Markdown + PDF)
 
-The DNS lookup module resolves A, AAAA, MX, TXT, and NS records and displays them in a Rich table for quick inspection.
-
-The password generator uses the secure `secrets` module and can produce high-entropy credentials with optional symbol exclusion.
-
-The hashing command supports SHA-256, SHA-512, and MD5, with a warning flag for MD5 usage.
-
-This tool is intended for authorized security testing only and includes a prominent ethical use disclaimer in both the README and startup UI.
-
-## Tech Stack
-
-- Python 3.10+
-- Typer
-- Rich
-- Requests
-- dnspython
-- python-whois
-- reportlab
-- ssl / socket
-- hashlib
+---
 
 ## Installation
 
 ```bash
-pip install -r requirements.txt
+pip install sentinel-cli
 ```
 
-## Quick Start
-
-1. Activate the virtual environment
-   - **PowerShell:**
-     ```powershell
-     .\.venv\Scripts\Activate.ps1
-     ```
-   - **Command Prompt:**
-     ```cmd
-     .\.venv\Scripts\activate.bat
-     ```
-
-2. Show the main menu
-   ```bash
-   python main.py
-   ```
-
-3. Run a command
-   ```bash
-   python main.py scan example.com
-   ```
-
-## Testing
-
-Run the included CLI validation suite with:
-
-```bash
-python -m unittest discover tests
-```
+---
 
 ## Usage
 
 ```bash
-python main.py
+sentinel --help
+sentinel scan example.com
+sentinel ssl example.com
+sentinel dns google.com
+sentinel whois openai.com
+sentinel headers github.com
+sentinel ports example.com
+sentinel ip 8.8.8.8
+sentinel password --length 24
+sentinel hash "Hello World" --algo sha256
+sentinel report example.com
 ```
 
-### Commands
+---
 
-- `sentinel scan <domain>` — Run a full site security scan
-- `sentinel ssl <domain>` — Inspect SSL/TLS certificate details
-- `sentinel dns <domain>` — Query DNS records
-- `sentinel whois <domain>` — Fetch WHOIS registration details
-- `sentinel headers <domain>` — Validate security headers
-- `sentinel ports <domain>` — Scan common TCP ports
-- `sentinel ip [ip-address]` — Look up IP geolocation
-- `sentinel password [--length INT] [--no-symbols]` — Generate a secure password
-- `sentinel hash [--algo sha256|sha512|md5] <text>` — Compute a hash digest
-- `sentinel report <domain>` — Generate Markdown and PDF security reports
+## Tech Stack
 
-### Examples
+- Python 3.10+
+- Typer - CLI framework
+- Rich - terminal UI
+- Requests - HTTP
+- dnspython - DNS queries
+- python-whois - WHOIS data
+- ReportLab - PDF generation
 
-```bash
-python main.py scan example.com
-python main.py ssl example.com
-python main.py dns example.com
-python main.py whois example.com
-python main.py headers example.com
-python main.py ports example.com
-python main.py ip 8.8.8.8
-python main.py password --length 20
-python main.py password --no-symbols
-python main.py hash --algo sha256 "important text"
-python main.py report example.com
-```
+---
 
-## Report Generation
+## License
 
-SENTINEL can create both Markdown and PDF security reports for audited domains. The PDF report uses ReportLab for a clean layout with headings, technical details, and a security score summary.
-
-## Ethical Use Disclaimer
-
-> ⚠️ SENTINEL is intended for use on systems you own or have explicit written permission to test. Unauthorized scanning may be illegal in your jurisdiction. Use responsibly.
-
-## Screenshot
-
-![SENTINEL Screenshot](screenshot.png)
+MIT (c) Khizar Arain

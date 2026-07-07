@@ -3,8 +3,8 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-import config
-from utils import make_request
+from sentinel import config
+from sentinel.utils import make_request
 
 console = Console(
     file=sys.stdout,
@@ -38,7 +38,7 @@ def run_headers(domain: str) -> None:
     table.add_column("Status")
 
     for header in config.SECURITY_HEADERS:
-        status = "✅ Present" if header in results["present_headers"] else "❌ Missing"
+        status = "Present" if header in results["present_headers"] else "Missing"
         style = "green" if header in results["present_headers"] else "red"
         table.add_row(header, f"[{style}]{status}[/{style}]")
 

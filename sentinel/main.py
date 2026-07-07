@@ -3,19 +3,19 @@ import typer
 from rich.console import Console
 from rich.panel import Panel
 
-import config
-from config import ETHICAL_MESSAGE, APP_NAME, VERSION
-from dns_lookup import run_dns
-from hashing import run_hash
-from headers import run_headers
-from ip import run_ip
-from password import run_password
-from ports import run_ports
-from reports import run_report
-from scanner import run_scan
-from ssl_checker import run_ssl
-from whois_lookup import run_whois
-from utils import is_valid_domain, normalize_domain, print_error
+from sentinel import __version__
+from sentinel.config import ETHICAL_MESSAGE, APP_NAME
+from sentinel.dns_lookup import run_dns
+from sentinel.hashing import run_hash
+from sentinel.headers import run_headers
+from sentinel.ip import run_ip
+from sentinel.password import run_password
+from sentinel.ports import run_ports
+from sentinel.reports import run_report
+from sentinel.scanner import run_scan
+from sentinel.ssl_checker import run_ssl
+from sentinel.whois_lookup import run_whois
+from sentinel.utils import is_valid_domain, normalize_domain, print_error
 
 console = Console(
     file=sys.stdout,
@@ -24,14 +24,18 @@ console = Console(
     color_system=None,
     legacy_windows=False,
 )
-app = typer.Typer(name="sentinel")
+app = typer.Typer(
+    name="sentinel",
+    help="SENTINEL - Cybersecurity Intelligence CLI. Analyze. Detect. Secure.",
+    add_completion=False,
+)
 
 
 @app.callback(invoke_without_command=True)
 def main(ctx: typer.Context) -> None:
     panel_text = (
-        f"[bold cyan]{APP_NAME}[/bold cyan] — Analyze. Detect. Secure.\n"
-        f"Version: [green]{VERSION}[/green]\n\n"
+        f"[bold cyan]{APP_NAME}[/bold cyan] - Analyze. Detect. Secure.\n"
+        f"Version: [green]{__version__}[/green]\n\n"
         "1. scan <domain>\n"
         "2. ssl <domain>\n"
         "3. dns <domain>\n"
@@ -128,5 +132,9 @@ def report(domain: str) -> None:
     run_report(normalized)
 
 
-if __name__ == "__main__":
+def cli():
     app()
+
+
+if __name__ == "__main__":
+    cli()

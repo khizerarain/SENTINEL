@@ -26,7 +26,7 @@ SECURITY_HEADERS = [
     "Permissions-Policy"
 ]
 ETHICAL_MESSAGE = (
-    "⚠️ SENTINEL is intended for use on systems you own or have explicit written "
+    "WARNING: SENTINEL is intended for use on systems you own or have explicit written "
     "permission to test. Unauthorized scanning may be illegal in your jurisdiction. "
     "Use responsibly."
 )

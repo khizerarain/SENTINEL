@@ -6,14 +6,14 @@ import unittest
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PYTHON = sys.executable
-MAIN = os.path.join(PROJECT_ROOT, "main.py")
+MAIN_MODULE = "sentinel.main"
 
 
 def run_command(args, cwd=PROJECT_ROOT):
     env = os.environ.copy()
     env["PYTHONUTF8"] = "1"
     result = subprocess.run(
-        [PYTHON, MAIN] + args,
+        [PYTHON, "-m", MAIN_MODULE] + args,
         cwd=cwd,
         env=env,
         capture_output=True,

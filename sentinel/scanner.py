@@ -5,12 +5,12 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-import config
-from config import SECURITY_HEADERS
-from headers import get_security_header_results
-from ports import scan_ports
-from ssl_checker import get_ssl_details
-from utils import compute_security_score, make_request
+from sentinel import config
+from sentinel.config import SECURITY_HEADERS
+from sentinel.headers import get_security_header_results
+from sentinel.ports import scan_ports
+from sentinel.ssl_checker import get_ssl_details
+from sentinel.utils import compute_security_score, make_request
 
 console = Console(
     file=sys.stdout,

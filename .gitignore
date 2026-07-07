@@ -1,16 +1,34 @@
+# Environment
 .env
 .env.local
 *.env
+
+# Python
 __pycache__/
 *.pyc
 *.pyo
-.DS_Store
+*.pyd
+.Python
 *.egg-info/
 dist/
 build/
 .venv/
 venv/
 env/
-*.log
+*.egg
+
+# Reports (contain real scan data)
 sentinel_report_*.pdf
 sentinel_report_*.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# PyPI
+*.whl
+*.tar.gz

@@ -7,7 +7,7 @@ import requests
 from rich.console import Console
 from rich.panel import Panel
 
-from config import ETHICAL_MESSAGE
+from sentinel.config import ETHICAL_MESSAGE
 
 console = Console(
     file=sys.stdout,
